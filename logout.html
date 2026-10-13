@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logout - Dream Home Real Estate</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, sans-serif;
+    }
+
+    body{
+        background:#f4f6f9;
+    }
+
+    .navbar{
+        background:#1f3c88;
+        color:white;
+        padding:18px 40px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    .logo{
+        font-size:24px;
+        font-weight:bold;
+    }
+
+    .navbar a{
+        color:white;
+        text-decoration:none;
+        margin-left:20px;
+    }
+
+    .logout-card{
+        width:450px;
+        margin:100px auto;
+        background:white;
+        padding:40px;
+        border-radius:12px;
+        text-align:center;
+        box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .logout-card h2{
+        color:#1f3c88;
+        margin-bottom:15px;
+    }
+
+    .logout-card p{
+        color:#555;
+        margin-bottom:25px;
+        line-height:1.6;
+    }
+
+    .logout-btn{
+        background:#dc3545;
+        color:white;
+        border:none;
+        padding:12px 25px;
+        border-radius:5px;
+        cursor:pointer;
+        font-size:16px;
+    }
+
+    .logout-btn:hover{
+        background:#b02a37;
+    }
+
+    footer{
+        background:#1f3c88;
+        color:white;
+        text-align:center;
+        padding:15px;
+        margin-top:120px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">Dream Home Real Estate</div>
+
+    <div>
+        
+        <a href="signup.html">SIGN UP</a>
+        <a href="login.html">LOGIN</a>
+        <a href="home.html">HOME</a>
+        <a href="logout.html">LOGOUT</a>
+    </div>
+</div>
+
+<div class="logout-card">
+    <h2>Logout</h2>
+
+    <p>
+        Thank you for visiting Dream Home Real Estate.
+        Click the button below to securely logout from your account.
+    </p>
+
+    <button class="logout-btn" onclick="logout()">
+        Logout
+    </button>
+</div>
+
+<footer>
+    © 2026 Dream Home Real Estate. All Rights Reserved.
+</footer>
+
+<script>
+function logout() {
+    alert("Logout Successful!");
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
+

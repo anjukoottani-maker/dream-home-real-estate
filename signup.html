@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up - Dream Home Real Estate</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+
+        /* ==============================
+           NAVIGATION BAR
+        ============================== */
+
+        header {
+            background-color: #1f3c5b;
+            padding: 18px 50px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+
+        nav a {
+            color: white;
+            text-decoration: none;
+
+            margin-left: 25px;
+
+            font-size: 16px;
+        }
+
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+
+        /* ==============================
+           SIGN UP CONTAINER
+        ============================== */
+
+        .signup-container {
+            width: 420px;
+
+            margin: 60px auto;
+
+            background-color: white;
+
+            padding: 35px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .signup-container h1 {
+            text-align: center;
+
+            color: #1f3c5b;
+
+            margin-bottom: 10px;
+        }
+
+
+        .signup-container .description {
+            text-align: center;
+
+            color: #666;
+
+            margin-bottom: 25px;
+
+            line-height: 1.5;
+        }
+
+
+        /* ==============================
+           FORM
+        ============================== */
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+        }
+
+
+        .form-group input {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 5px;
+
+            font-size: 15px;
+        }
+
+
+        .form-group input:focus {
+            outline: none;
+
+            border-color: #1f3c5b;
+        }
+
+
+        /* ==============================
+           SIGN UP BUTTON
+        ============================== */
+
+        .signup-btn {
+            width: 100%;
+
+            padding: 13px;
+
+            background-color: #1f3c5b;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 5px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+        }
+
+
+        .signup-btn:hover {
+            background-color: #162c43;
+        }
+
+
+        /* ==============================
+           LOGIN LINK
+        ============================== */
+
+        .login-link {
+            text-align: center;
+
+            margin-top: 20px;
+        }
+
+
+        .login-link p {
+            color: #666;
+
+            margin-bottom: 0;
+        }
+
+
+        .login-link a {
+            color: #1f3c5b;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            background-color: #1f3c5b;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 18px;
+
+            margin-top: 50px;
+        }
+
+
+        /* ==============================
+           RESPONSIVE DESIGN
+        ============================== */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 15px;
+
+                flex-direction: column;
+            }
+
+
+            nav {
+                margin-top: 15px;
+
+                text-align: center;
+            }
+
+
+            nav a {
+                margin: 5px;
+
+                font-size: 14px;
+            }
+
+
+            .signup-container {
+                width: 90%;
+
+                margin: 40px auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         NAVIGATION BAR
+    ============================== -->
+
+    <header>
+
+        <div class="logo">
+            Dream Home
+        </div>
+
+
+        <nav>
+
+            <a href="home.html">HOME</a>
+            <a href="properties.html">PROPERTIES</a>
+            <a href="add-property.html">ADD PROPERTY</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ==============================
+         SIGN UP FORM
+    ============================== -->
+
+    <div class="signup-container">
+
+
+        <h1>Create Account</h1>
+
+
+        <p class="description">
+            Register to access our real estate services
+        </p>
+
+
+
+        <form id="signupForm">
+
+
+            <!-- FULL NAME -->
+
+            <div class="form-group">
+
+                <label for="name">
+                    Full Name
+                </label>
+
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- CONFIRM PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    placeholder="Confirm your password"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- SIGN UP BUTTON -->
+
+            <button
+                type="submit"
+                class="signup-btn"
+            >
+                Sign Up
+            </button>
+
+
+        </form>
+
+
+
+        <!-- LOGIN LINK -->
+
+        <div class="login-link">
+
+            <p>
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Dream Home Real Estate. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ==============================
+         JAVASCRIPT
+    ============================== -->
+
+    <script>
+
+
+        document
+            .getElementById("signupForm")
+            .addEventListener("submit", async function(event) {
+
+
+                // Stop the page from refreshing
+
+                event.preventDefault();
+
+
+
+                // Get form values
+
+                const name =
+                    document.getElementById("name").value.trim();
+
+
+                const email =
+                    document.getElementById("email").value.trim();
+
+
+                const password =
+                    document.getElementById("password").value;
+
+
+                const confirmPassword =
+                    document.getElementById("confirmPassword").value;
+
+
+
+                // Check password
+
+                if (password !== confirmPassword) {
+
+                    alert("Passwords do not match.");
+
+                    return;
+
+                }
+
+
+
+                // Check password length
+
+                if (password.length < 6) {
+
+                    alert("Password must contain at least 6 characters.");
+
+                    return;
+
+                }
+
+
+
+                try {
+
+
+                    // Send data to Node.js
+
+                    const response = await fetch("/register", {
+
+                        method: "POST",
+
+
+                        headers: {
+
+                            "Content-Type": "application/json"
+
+                        },
+
+
+                        body: JSON.stringify({
+
+                            name: name,
+
+                            email: email,
+
+                            password: password
+
+                        })
+
+                    });
+
+
+
+                    // Get response from server
+
+                    const result = await response.json();
+
+
+
+                    // Registration successful
+
+                    if (response.ok) {
+
+
+                        alert("Registration Successful!");
+
+
+                        // Clear form
+
+                        document
+                            .getElementById("signupForm")
+                            .reset();
+
+
+                        // Go to login page
+
+                        window.location.href = "login.html";
+
+
+                    }
+
+
+                    // Registration failed
+
+                    else {
+
+
+                        alert(
+                            result.message ||
+                            "Registration Failed."
+                        );
+
+
+                    }
+
+
+                }
+
+
+                catch (error) {
+
+
+                    console.error(
+                        "Registration Error:",
+                        error
+                    );
+
+
+                    alert(
+                        "Unable to connect to the server. Please make sure your Node.js server is running."
+                    );
+
+
+                }
+
+
+            });
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Home Real Estate</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+/* Navbar */
+header{
+    background:#1e3a5f;
+    color:white;
+    padding:15px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+/* Hero Section */
+.hero{
+    height:80vh;
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content h1{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.hero-content p{
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+.btn{
+    background:#ffc107;
+    color:black;
+    padding:12px 25px;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+/* Section */
+section{
+    padding:60px 50px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:35px;
+    margin-bottom:40px;
+    color:#1e3a5f;
+}
+
+/* Property Cards */
+.properties{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    margin-bottom:10px;
+}
+
+.price{
+    color:green;
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* About */
+.about{
+    background:white;
+    text-align:center;
+}
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* Contact */
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:10px 0;
+    font-size:18px;
+}
+
+/* Footer */
+footer{
+    background:#1e3a5f;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <div class="logo">Dream Home Real Estate</div>
+
+    <nav>
+        
+        <a href="signup.html">SIGN UP</a>
+        <a href="login.html">LOGIN</a>
+        <a href="home.html">HOME</a>
+        <a href="properties.html">PROPERTIES</a>
+        <a href="add-property.html">ADD PROPERTY</a>
+        <a href="logout.html">LOGOUT</a>
+        
+    
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Find Your Dream Home</h1>
+        <p>Buy, Rent and Sell Properties with Confidence</p>
+        <a href="#properties" class="btn">Explore Properties</a>
+    </div>
+</section>
+
+<!-- Properties -->
+<section id="properties">
+    <h2 class="section-title">Featured Properties</h2>
+
+    <div class="properties">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800" alt="">
+            <div class="card-content">
+                <h3>Luxury Villa</h3>
+                <p>Kochi, Kerala</p>
+                <p class="price">₹75,00,000</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=800" alt="">
+            <div class="card-content">
+                <h3>Modern Apartment</h3>
+                <p>Kottayam, Kerala</p>
+                <p class="price">₹45,00,000</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800" alt="">
+            <div class="card-content">
+                <h3>Family House</h3>
+                <p>Thrissur, Kerala</p>
+                <p class="price">₹55,00,000</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- About -->
+<section id="about" class="about">
+    <h2 class="section-title">About Us</h2>
+
+    <p>
+        Dream Home Real Estate helps customers buy, sell, and rent
+        properties across Kerala. We provide trusted property listings,
+        professional support, and a smooth experience for finding the
+        perfect home or investment property.
+    </p>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+    <h2 class="section-title">Contact Us</h2>
+
+    <p><strong>Email:</strong> realestate@dreamhome.com</p>
+    <p><strong>Phone:</strong> +91 9568197453</p>
+    <p><strong>Location:</strong> Kerala, India</p>
+</section>
+
+<footer>
+    <p>© 2026 Dream Home Real Estate. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
+              

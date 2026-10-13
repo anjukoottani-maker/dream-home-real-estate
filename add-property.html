@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Property - Dream Home Real Estate</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        background-color: #f4f7fb;
+        color: #333;
+      } /* Header */
+      header {
+        background-color: #1f3c5b;
+        color: white;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      nav {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+        transition: 0.3s;
+      }
+      nav a:hover {
+        color: #ffd166;
+      } /* Main Section */
+      .container {
+        width: 90%;
+        max-width: 700px;
+        margin: 50px auto;
+      }
+      .property-card {
+        background-color: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      }
+      .property-card h1 {
+        text-align: center;
+        color: #1f3c5b;
+        margin-bottom: 10px;
+      }
+      .property-card p {
+        text-align: center;
+        color: #777;
+        margin-bottom: 30px;
+      } /* Form */
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #333;
+      }
+      .form-group input {
+        width: 100%;
+        padding: 13px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 15px;
+        outline: none;
+        transition: 0.3s;
+      }
+      .form-group input:focus {
+        border-color: #1f3c5b;
+        box-shadow: 0 0 5px rgba(31, 60, 91, 0.2);
+      } /* Button */
+      .submit-btn {
+        width: 100%;
+        padding: 14px;
+        background-color: #1f3c5b;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .submit-btn:hover {
+        background-color: #163047;
+      } /* Message */
+      #message {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: bold;
+      } /* Footer */
+      footer {
+        background-color: #1f3c5b;
+        color: white;
+        text-align: center;
+        padding: 18px;
+        margin-top: 60px;
+        font-size: 14px;
+      } /* Mobile Responsive */
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          gap: 15px;
+          text-align: center;
+        }
+        nav {
+          justify-content: center;
+        }
+        .container {
+          width: 92%;
+          margin: 30px auto;
+        }
+        .property-card {
+          padding: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">DREAM HOME REAL ESTATE</div>
+      <nav>
+        <a href="home.html">Home</a> <a href="home.html#about">About Us</a>
+        <a href="properties.html">Properties</a>
+        <a href="contact us.html">Contact Us</a>
+        <a href="add-property.html">Add Property</a>
+      </nav>
+    </header>
+    <!-- Add Property Section -->
+    <main class="container">
+      <div class="property-card">
+        <h1>Add New Property</h1>
+        <p>Enter the property details below to add a new property.</p>
+        <form id="propertyForm">
+          <div class="form-group">
+            <label for="title">Property Title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Enter property title"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              placeholder="Enter property location"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input
+              type="number"
+              id="price"
+              name="price"
+              placeholder="Enter property price"
+              min="1"
+              required
+            />
+          </div>
+          <button type="submit" class="submit-btn">Add Property</button>
+        </form>
+        <!-- Success/Error Message -->
+        <div id="message"></div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer>© 2026 Dream Home Real Estate. All Rights Reserved.</footer>
+    <script>
+      document
+        .getElementById("propertyForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+          const title = document.getElementById("title").value;
+          const location = document.getElementById("location").value;
+          const price = document.getElementById("price").value;
+          const message = document.getElementById("message");
+          try {
+            const response = await fetch("/api/properties", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                title: title,
+                location: location,
+                price: price,
+              }),
+            });
+            const data = await response.json();
+            if (response.ok) {
+              message.textContent = "Property added successfully";
+              message.style.color = "green";
+              document.getElementById("propertyForm").reset();
+            } else {
+              message.textContent = data.message || "Failed to add property";
+              message.style.color = "red";
+            }
+          } catch (error) {
+            console.error(error);
+            message.textContent = "Failed to connect to server";
+            message.style.color = "red";
+          }
+        });
+    </script>
+  </body>
+</html>

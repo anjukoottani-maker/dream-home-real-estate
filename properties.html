@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Properties - Dream Home Real Estate</title>
+        <link rel="stylesheet"
+         href="property.css">
+    </head>
+    <body>
+        <script>
+            fetch("http://localhost:3000/api/properties")
+            .then(response => response.json())
+            .then(data => {
+                const propertyList =
+    document.getElementById(".property-list");
+                data.forEach(property => {
+                    propertyList.innerHTML += `
+                    <div>
+                        <h3>${property.title}</h3>
+                        <p><strong>Location:</strong>${property.location}</p>
+                        <p><strong>Price:</strong>${property.price}</p>
+                        <a href="${property.detailsPage}">View Details</a>
+                    <hr>
+                    </div>
+                    `;
+                
+                });
+            })
+
+
+        </script> 
+        <header>
+            <h1>DREAM HOME REAL ESTATE</h1>
+           <p>Find Your Perfect Home Today</p>
+        <nav>
+            
+            <a href="signup.html">SIGN UP</a>
+            <a href="login.html">LOGIN</a>
+             <a href="home.html">HOME</a>
+            <a href="properties.html">PROPERTIES</a>
+            <a href="add-property.html">ADD PROPERTY</a>
+            <a href="logout.html">LOGOUT</a>
+        </nav>
+        </header>
+        <section>
+            <h2>Available Properties</h2>
+            <div class="property-card">
+            <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bHV4dXJ5JTIwdmlsbGF8ZW58MHx8MHx8fDA%3D" alt="Luxury Villa">
+            <h3>Property Information:</h3>
+            <p><strong>Title:</strong>Luxury Villa</p>
+            <p><strong>Location:</strong>Kochi,Kerala</p>
+             <a href="luxury-villa.html">View Details</a>
+             </div>
+             
+             <div class="property-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVppPpOWVZq_wR9PDE8f1PirBKb_VGvL8PamikthzLsQ&s=10" alt="Modern Apartment">
+            <h3>Property Information:</h3>
+            <p><strong>Title:</strong>Modern Apartment</p>
+            <p><strong>Location:</strong>Trivandrum</p>
+             <a href="modern-apartment.html">View Details</a>
+            </div>
+            
+              <div class="property-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSht3coBc-0bdT_pMi9tzahWEyRtg-Nfi0jMMutngE6aw&s=10" alt="Family House">
+            <h3>Property Information:</h3>
+            <p><strong>Title:</strong>Family House</p>
+            <p><strong>Location:</strong>Alappuzha</p>
+             <a href="family-house.html">View Details</a>
+             </div>   
+        </section>
+        <footer>
+           <p> &copy;  2026 Dream Home Real Estate.All Rights Reserved.
+           </p> 
+        </footer>
+    </body>
+</html>
